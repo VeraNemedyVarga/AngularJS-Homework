@@ -18,13 +18,15 @@
           <li>Button</li>
       </ul>
       <div ng-model="records" ng-repeat="person in records.persons">
-          <div id="{{$index}}">{{$index}} {{person.name}} - {{person.age}} - {{person.nick}} - {{person.employee}}</div>
+          <div id="{{$index + 1}}">{{$index+1}} {{person.name}} - {{person.age}} - {{person.nick}} - {{person.employee}}
+            <button ng-click="removePerson(id)" name="button">Delete</button>
+          </div>
+
       <!-- <input type="checkbox" ng-show={{person.employee}} disabled="true" name="" checked="checked"></input>
       <input type="checkbox" ng-hide={{person.employee}} disabled="true" name="" checked="checked"></input> -->
-
-
-
       </div>
+
+
       <form>
         <span></span>
         <input type="text" ng-model="name" placeholder="Name"></input>
