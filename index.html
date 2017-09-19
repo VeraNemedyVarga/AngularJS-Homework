@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>AngularJS-Homework</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.js"></script>
+    <script src="app.js"></script>
+  </head>
+
+  <body ng-app="angularJS-Homework" ng-controller="MainCtrl">
+      <button>Add</button>
+      <ul>
+          <li>Name</li>
+          <li>Age</li>
+          <li>Nickname</li>
+          <li>Employee</li>
+          <li>Button</li>
+      </ul>
+      <div ng-model="records" ng-repeat="person in records.persons">
+          <div id="{{$index}}">{{$index}} {{person.name}} - {{person.age}} - {{person.nick}} - {{person.employee}}</div>
+      <!-- <input type="checkbox" ng-show={{person.employee}} disabled="true" name="" checked="checked"></input>
+      <input type="checkbox" ng-hide={{person.employee}} disabled="true" name="" checked="checked"></input> -->
+
+
+
+      </div>
+      <form>
+        <span></span>
+        <input type="text" ng-model="name" placeholder="Name"></input>
+        <input type="text" ng-model="job" placeholder="Job title"></input>
+        <input type="text" ng-model="age" placeholder="Age"></input>
+        <input type="text" ng-model="nick" placeholder="Nickname"></input>
+        <input type="checkbox" ng-model="employee"></input>
+        <button ng-click="addPerson(employee)">OK</button>
+        <button ng-click="">Cancel</button>
+      </form>
+    </body>
+</html>
