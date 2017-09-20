@@ -8,7 +8,7 @@
     <script src="app.js"></script>
   </head>
 
-  <body ng-app="angularJS-Homework" ng-controller="MainCtrl">
+  <body ng-app="App" ng-controller="MainCtrl">
       <button>Add</button>
       <ul>
           <li>Name</li>
@@ -17,9 +17,11 @@
           <li>Employee</li>
           <li>Button</li>
       </ul>
-      <div ng-model="records" ng-repeat="person in records.persons">
-          <div id="{{$index + 1}}">{{$index+1}} {{person.name}} - {{person.age}} - {{person.nick}} - {{person.employee}}
-            <button ng-click="removePerson(id)" name="button">Delete</button>
+      <div ng-model="records.persons" ng-repeat="person in records.persons">
+          <div id="{{$index}}">
+            {{records.persons}}
+            {{$index}} {{person.name}} - {{person.age}} - {{person.nick}} - {{person.employee}}
+            <button ng-click="removePerson($index)" name="button">Delete</button>
           </div>
 
       <!-- <input type="checkbox" ng-show={{person.employee}} disabled="true" name="" checked="checked"></input>
@@ -28,7 +30,6 @@
 
 
       <form>
-        <span></span>
         <input type="text" ng-model="name" placeholder="Name"></input>
         <input type="text" ng-model="job" placeholder="Job title"></input>
         <input type="text" ng-model="age" placeholder="Age"></input>
